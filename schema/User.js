@@ -16,10 +16,6 @@ try {
       type: String,
       required: [true, "Please complete this field"]
     },
-    age: {
-      type: Number,
-      required: [true, "Please complete this field"]
-    },
     todo: [{
       title: String,
       body: String,

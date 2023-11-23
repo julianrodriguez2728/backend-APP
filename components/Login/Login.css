@@ -1,0 +1,82 @@
+.LoginContainer{
+    background-image: url("../img/bg.png");
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loginForm{
+    width: auto ;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.699);
+    display: flex;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+.btnsContainerLog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.pContainer{
+    margin-bottom: 200px;
+}
+.formButtons{
+    margin: 18px;
+    width: 66%;
+    height: 78px;
+    background-color: white;
+    border: none;
+    box-shadow: 1px 1px 12px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 12px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 12px -2px rgba(0,0,0,0.75);
+    border-radius: 9px;
+    transition: all .2s;
+}
+.formButtons:hover{
+    width: 69%;
+    height: 80px;
+}
+.inputsLogin{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputlogin{
+    width: 80%;
+    background-color: #433E3E;
+    border: none;
+    padding: 26px;
+    border-radius: 40px;
+    margin-top: 40px;
+    
+    font-size: 20px;
+}
+
+.butonLogin{
+    border: none;
+    height: 63px;
+    width: 308px;
+    font-size: 27px;
+    background: linear-gradient(to right, #1d4b91, #B20081);
+    color: white;
+    font-weight: 600;
+    margin-top: 22px;
+    cursor: pointer;
+}
+.imgLogo{
+    position: absolute;
+    left: 0px;
+    bottom: 2px;
+}

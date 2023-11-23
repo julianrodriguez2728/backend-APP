@@ -23,10 +23,14 @@ export const POST = async(req, res) => {
                 return element.name
             }
         });
+        
         const findData = dataMaping.some(e => e === body.name)
         console.log(findData);
         if(findData === true){
-            return NextResponse.json("User existing", {status:404})
+            const dataUserLogin = data?.find((element)=>{
+                return element.name === body.name
+            })
+            return NextResponse.json({data: dataUserLogin}, {status:200})
         }
         const newStudent = await UserModel.create(body)
         return NextResponse.json({data: newStudent}, {status:201})
