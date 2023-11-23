@@ -1,0 +1,83 @@
+.filterCategories{
+    background-color: #1B1C23;
+    height: 90%;
+    width: 30%;
+    margin-right: 20px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.todoContainer{
+    background-color: #1B1C23;
+    height: 90%;
+    width: 60%;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 200px;
+}
+
+.buttonForm{
+    background: none;
+    border: none;
+    margin: 10px;
+    color: white;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .7s;
+    padding-top: 12px;
+    padding-bottom: 18px;
+    border-radius: 10px;
+    width: 190%;
+    cursor: pointer;
+}
+.buttonForm:hover{
+    background-color: #353535;
+
+}
+.buttonForm:active{
+    background-color: #353535;
+}
+.buttonForm:focus {
+    background-color: #353535;
+    
+}
+.buttonCreate{
+    margin-bottom: 150px;
+    transition: all .4s;
+    padding-top: 20px;
+    padding-bottom: 56px;
+    cursor: pointer;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonCreate:hover{
+    background-color: #353535;
+
+}
+.buttonCreate:active{
+    background-color: #353535;
+}
+.buttonCreate:focus {
+    background-color: #353535;
+    
+}
+.imageFormTask{
+    position: absolute;
+    left: 0;
+    top: 0;
+}

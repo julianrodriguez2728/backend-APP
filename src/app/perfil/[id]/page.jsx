@@ -5,6 +5,7 @@ import {useParams} from "next/navigation"
 import axios from "axios"
 import Todo from "../../../../components/TodoButton/Todo.jsx"
 import CartTodo from "../../../../components/TodoButton/CartTodo.jsx"
+import HomePageLogin from '../../../../components/Home/Home.jsx'
 
 function Page() {
   const [dataUser, setDataUser] = useState(null);
@@ -32,9 +33,10 @@ function Page() {
   }, [id]);
   return (
     <div>
-      Welcome! {dataUser?.name}
+      {/* Welcome! {dataUser?.name}
       <Todo id={dataUser?._id}/>
-      <CartTodo array={dataUser?.todo}/> 
+      <CartTodo array={dataUser?.todo}/>  */}
+      <HomePageLogin /> 
     </div>
   )
 }
