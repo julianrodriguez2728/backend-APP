@@ -10,6 +10,10 @@ import { Montserrat_Alternates } from 'next/font/google';
 import Image from "next/image";
 import img from "../img/JR-removebg-preview 1.png"
 import Todo from '../TodoButton/Todo';
+import AllTodo from "../TodoButton/AllTodo.jsx"
+import {useRouter} from "next/navigation"
+import {useParams} from "next/navigation"
+
 const istokFont = Istok_Web({
   subsets:["latin"],
   weight:["400", "700"]
@@ -19,14 +23,18 @@ const montserrat = Montserrat_Alternates({
   subsets:["latin"],
   weight:["600"]
 })
-function HomePageLogin() {
+
+
+
+function HomePageLogin({dataUser, params}) {
   const [task, setTask] = useState('task');
+  const navigate = useRouter()
+  const router = useParams()
 
   const navigateTask = (task) => {
     setTask(task)
   };
-
-
+  const {id} = router;
   return (
     <div style={{backgroundColor:"#101010", height:"100vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
       <Image src={img} height={140} width={140} className='imageFormTask'/> 
@@ -42,7 +50,7 @@ function HomePageLogin() {
                 }}>Filters</p>
                 <div className="buttonContainer">
 
-                <button className={`${montserrat.className} buttonForm`} onClick={()=> navigateTask('all')}>
+                <button className={`${montserrat.className} buttonForm`} onClick={() => navigate.push(`/perfil/${id}/all`)}>
                   <ChecklistIcon style={{fontSize:29, color:"white", marginRight:29}}/>
                   All tasks
                 </button>
@@ -60,16 +68,15 @@ function HomePageLogin() {
                 </div>
         </div>
         <div className="todoContainer">
-        <p className={istokFont.className} style={{
-                fontWeight: 700,
-                background: 'linear-gradient( #FF00B8, #2A6ED3)', // Ajusta los colores según tus preferencias
-                WebkitBackgroundClip: 'text',
-                color: 'transparent', // Hace que el texto sea transparente
-                fontSize: 48,
-                margin:30,
-                marginRight: 270
-                }}>Tasks</p>
-                <Todo/>
+          <p className={istokFont.className} style={{
+                  fontWeight: 700,
+                  background: 'linear-gradient( #FF00B8, #2A6ED3)', // Ajusta los colores según tus preferencias
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent', // Hace que el texto sea transparente
+                  fontSize: 48,
+                  margin:30,
+                  marginRight: 270
+                  }}>Tasks</p>
 
         </div>
     </div>

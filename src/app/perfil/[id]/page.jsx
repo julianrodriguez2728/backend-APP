@@ -8,11 +8,13 @@ import CartTodo from "../../../../components/TodoButton/CartTodo.jsx"
 import HomePageLogin from '../../../../components/Home/Home.jsx'
 
 function Page() {
+
   const [dataUser, setDataUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const router = useParams()
   const {id} = router;
+  
   useEffect(() => {
     const fetchData = async() => {
       try {
@@ -36,7 +38,7 @@ function Page() {
       {/* Welcome! {dataUser?.name}
       <Todo id={dataUser?._id}/>
       <CartTodo array={dataUser?.todo}/>  */}
-      <HomePageLogin /> 
+      <HomePageLogin dataUser={dataUser}/> 
     </div>
   )
 }

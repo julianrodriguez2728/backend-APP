@@ -2,9 +2,20 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
 }
 .inputClass{
     border: none;
     margin: 5px;
+    background: rgb(114, 111, 133);
+    width: 600px;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}
+.botonFormTask{
+    background-color: black;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
 }

@@ -1,3 +1,4 @@
+"use client"
 import Login from "./login/page";
 import HomePageLogin from "../../components/Home/Home.jsx";
 
