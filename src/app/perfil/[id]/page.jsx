@@ -32,7 +32,7 @@ function Page() {
     if (id) {
       fetchData();
     } 
-  }, [id]);
+  }, []);
   return (
     <div>
       {/* Welcome! {dataUser?.name}
@@ -44,3 +44,5 @@ function Page() {
 }
 
 export default Page
+
+// import "../../../../../components/Home/styles.css"

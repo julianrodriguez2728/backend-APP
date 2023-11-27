@@ -70,10 +70,10 @@ function Login() {
                     <h2 className={mont.className} style={{fontSize:40, fontWeight:"700", color:"#3D3D3F"}}>Sign in</h2>
                 }
             </div> 
-            <div className="btnsContainerLog">
+            {/* <div className="btnsContainerLog">
             <button className="formButtons"><Image src={google} alt="LogoGoogle" height={30} width={30}/></button>
             <button className="formButtons"><Image src={git} alt="LogoGoogle" height={50} width={100}/></button>
-            </div>
+            </div> */}
             <form onSubmit={sendData}>
                 <div className="inputsLogin">
                 <input type="text" className={mont.className} placeholder="Username" style={{
@@ -105,9 +105,9 @@ function Login() {
             {
                 sign === false 
                 ?
-                <p className={mont.className} style={{ fontSize:18 , cursor:"pointer"}} onClick={signIn}>or Sign up</p>
+                <p className={mont.className} style={{ fontSize:21 , cursor:"pointer"}} onClick={signIn}>or Sign up</p>
                 :
-                <p className={mont.className} style={{ fontSize:18,cursor:"pointer"}} onClick={Login}>or Login</p>
+                <p className={mont.className} style={{ fontSize:21,cursor:"pointer"}} onClick={Login}>or Login</p>
             }
         </div>
             <Image src={img} alt="Logo" height={200} width={200} className="imgLogo"/>

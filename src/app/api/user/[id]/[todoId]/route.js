@@ -25,39 +25,42 @@ export const GET = async (req, { params }) => {
   export const DELETE = async (req, { params }) => {
     await connectDB();
     const { id, todoId } = params;
-    console.log(id, todoId);
   
     try {
-      const user = await UserModel.findById(id);
-      if (user) {
-        const userFound = user.todo.find((element) => element.id === todoId);
-        console.log(userFound.id);
-        if (userFound) {
-          // Eliminar el todo del array de todos
-          user.todo.pull({ id: userFound.id });
-          await user.save();
-          return NextResponse.json({ data: userFound }, { status: 200 });
-        }
-        return NextResponse.json({ deleting: "Tarea no encontrada" }, { status: 404 });
+      const updatedUser = await UserModel.findByIdAndUpdate(
+        id,
+        { $pull: { todo: { _id: todoId } } },
+        { new: true }
+      );
+  
+      if (updatedUser) {
+        return NextResponse.json({ data: updatedUser }, { status: 200 });
       }
+  
+      return NextResponse.json({ deleting: 'Task not found' }, { status: 404 });
     } catch (error) {
-      console.error("Error:", error);
-      return NextResponse.json({ error: "Error interno del servidor" }, { status: 500 });
+      console.error('Error:', error);
+      return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
     }
   };
-
   export const PUT = async(req,{params}) => {
     await connectDB()
     const user = await UserModel.findById(params.id);
     try {
       const body = await req.json();
-      
+
       console.log(body);
       const todoUpdate = user?.todo.find((todo)=> todo.id === params.todoId)
       if(todoUpdate){
-        todoUpdate.title = body.title;
-        todoUpdate.body = body.body;
-
+        if(body.title){
+          todoUpdate.title = body.title;
+        }
+        if(body.body){
+          todoUpdate.body = body.body;
+        }
+        if(body.complete){
+          todoUpdate.complete = body.complete;
+        }
         await user.save()
       }
 

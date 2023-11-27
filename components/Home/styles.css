@@ -11,7 +11,8 @@
 }
 .todoContainer{
     background-color: #1B1C23;
-    height: 90%;
+    min-height: 90vh;
+    padding: 20px;
     width: 60%;
     border-radius: 19px;
     display: flex;
@@ -54,10 +55,9 @@
     
 }
 .buttonCreate{
-    margin-bottom: 150px;
     transition: all .4s;
     padding-top: 20px;
-    padding-bottom: 56px;
+    padding-bottom: 30px;
     cursor: pointer;
     border-radius: 0 0 20px 20px;
     width: 100%;
@@ -80,4 +80,35 @@
     position: absolute;
     left: 0;
     top: 0;
+}
+.modalInput{
+    margin: 10px;
+    font-size: 20px;
+    background: none;
+    border-bottom: 2px solid rgb(179, 179, 179);
+    transition: all .2s;
+    width: 100%;
+    padding: 17px;
+}
+.modalInput:focus{
+    outline: none;
+    color: white;
+    background-color: #080808;
+}
+.complete{
+    display: flex;
+}
+.action{
+    background-color: rgb(164, 82, 211);
+    border-radius: 4px;
+}
+.action:hover{
+    background-color: rgb(99, 10, 151);
+
+}
+.close{
+    border-radius: 4px;
+}
+.close:hover{
+    background-color: red;
 }

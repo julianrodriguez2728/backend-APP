@@ -2,7 +2,7 @@
 import React from 'react'
 import {Accordion, AccordionItem} from "@nextui-org/react";
 
-import "./styles.css"
+import "../Home/styles.css"
 import { Istok_Web } from "next/font/google";
 import ChecklistIcon from '@mui/icons-material/Checklist';
 import CheckIcon from '@mui/icons-material/Check';
@@ -11,7 +11,6 @@ import { Montserrat_Alternates } from 'next/font/google';
 import Image from "next/image";
 import img from "../img/JR-removebg-preview 1.png"
 import Todo from '../TodoButton/Todo';
-import AllTodo from "../TodoButton/AllTodo.jsx"
 import {useRouter} from "next/navigation"
 import {useParams} from "next/navigation"
 
@@ -27,8 +26,11 @@ const montserrat = Montserrat_Alternates({
 
 
 function AllTodo({dataUser}) {
+ 
+    const navigate = useRouter()
+    const {id} = useParams()
   return (
-    <div style={{backgroundColor:"#101010", height:"100vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
+    <div style={{backgroundColor:"#101010", minHeight:"100vh", display:"flex", justifyContent:"center", alignItems:"center"}}>
     <Image src={img} height={140} width={140} className='imageFormTask'/> 
       <div className="filterCategories">
           <p className={istokFont.className} style={{
@@ -42,7 +44,7 @@ function AllTodo({dataUser}) {
               }}>Filters</p>
               <div className="buttonContainer">
 
-              <button className={`${montserrat.className} buttonForm`} onClick={() => navigate.push(`/perfil/${id}/all`)}>
+              <button className={`${montserrat.className} buttonForm`}>
                 <ChecklistIcon style={{fontSize:29, color:"white", marginRight:29}}/>
                 All tasks
               </button>
@@ -55,7 +57,7 @@ function AllTodo({dataUser}) {
                 Incompletes
               </button>
               </div>
-              <div className="buttonCreate">
+              <div className="buttonCreate"  onClick={()=> navigate.push(`/perfil/${id}`)}>
                 <h3 className={montserrat.className} style={{fontSize:28 , color:"white"}}>+ Create Task</h3>
               </div>
       </div>
@@ -69,24 +71,10 @@ function AllTodo({dataUser}) {
                 margin:30,
                 marginRight: 270
                 }}>Tasks</p>
-                 <div className='berenjenuda' style={{backgroundColor:"#2B2B34", width:"80%", borderRadius:10, color:"white", padding:20}}>
-              <Accordion isCompact  variant='light'>
-              <AccordionItem key="1" aria-label="Accordion 1" title="Accordion 1" >
-                <p>Hola mi vida</p>
-              </AccordionItem>
-              <AccordionItem key="2" aria-label="Accordion 2" title="Accordion 2" >
-                GOLA2
-              </AccordionItem>
-              <AccordionItem key="3" aria-label="Accordion 3" title="Accordion 3" >
-                4
-              </AccordionItem>
-            </Accordion>
-    </div>
-
+                 <Todo/>
       </div>
   </div>
   )
 }
 
 export default AllTodo
-   

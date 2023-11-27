@@ -66,7 +66,7 @@ function Login() {
                 <h2 className={mont.className} style={{fontSize:40, fontWeight:"700", color:"#3D3D3F"}}>Login</h2>
             </div> 
             <div className="btnsContainerLog">
-            <button className="formButtons"><Image src={google} alt="LogoGoogle" height={30} width={30}/></button>
+            <button className="formButtons" onClick={()=> signIn("google")}><Image src={google} alt="LogoGoogle" height={30} width={30}/></button>
             <button className="formButtons"><Image src={git} alt="LogoGoogle" height={50} width={100}/></button>
             </div>
             <form onSubmit={sendData}>
