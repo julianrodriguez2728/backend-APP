@@ -39,7 +39,7 @@ function Completes() {
     useEffect(() => {
       const fetchData = async() => {
           try {
-            const response = await axios.get(`http://localhost:3000/api/user/${id}`);
+            const response = await axios.get(`https://todo-proyect.vercel.app/api/user/${id}`);
             if(response){
               setDataUser(response.data.data);
             }
